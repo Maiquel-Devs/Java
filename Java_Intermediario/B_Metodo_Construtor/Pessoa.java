@@ -6,7 +6,7 @@ public class Pessoa {
     int idade;      // Atributo de Classe
 
 
-    // Construtor
+    // Método Construtor
     public Pessoa(String nome, int idade) {
 
         this.nome = nome;   // this.nome refere-se ao atributo da classe
@@ -28,6 +28,6 @@ public class Pessoa {
 
 // O método construtor serve justamente para definir valores iniciais aos atributos assim que você cria (instancia)  um objeto da classe. 
 
-// Nesse caso Pessoa pessoa1 = new Pessoa("Maiquel", 25); , o construtor já atribui "Maiquel" ao atributo nome e 25 ao atributo idade.
+// Nesse caso Pessoa p = new Pessoa("Maiquel", 20); , o construtor já atribui "Maiquel" ao atributo nome e 20 ao atributo idade.
 
 // Antes voçê tinha que fazer manaulmente esse processo, por exemplo  p.nome = "Maiquel"; p.idade = 20;
