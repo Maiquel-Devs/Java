@@ -10,8 +10,8 @@ public class Retangulo {
     // Construtor
     public Retangulo(double largura, double altura) {
 
-        this.largura = largura;  // Trocar pela função set
-        this.altura = altura;
+        setLargura(largura);  // Usando a função Setter no construtor.
+        setAltura(altura);
 
     }
 
@@ -31,6 +31,37 @@ public class Retangulo {
 
     }
 
+
+    // Getter da Altura 
+    public double getAltura() {
+
+        return altura;
+    }
+
+
+    // Setter da Altura
+    public void setAltura(double altura) {
+        
+        if (altura > 0) {
+            this.altura = altura;
+        }
+    }
+
+
+    // Método is -> retorna true/false
+    public boolean isQuadrado() {
+
+        return largura == altura;
+    }
+
 }
 
-// Colocar os comentarios e organização certinho.
+
+// Getter → método usado para pegar (obter) o valor de um atributo privado.
+// Setter → método usado para definir (alterar) o valor de um atributo privado.
+
+// is     → método usado para verificar (retornar) o valor de um atributo boolean.
+
+
+// Usando a Função Setter no Construtor Eu Posso Fazer uma Verificação (isso é bom).
+// Nesse caso a verificação é ver se Altura ou Largura é maior que 0 "não é negativo". 
