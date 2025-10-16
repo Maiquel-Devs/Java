@@ -1,67 +1,109 @@
-📘 Conceito de Herança em Java
+HERANÇA EM JAVA
+-----------------------------
 
-➡️ A **herança** é um dos principais pilares da Programação Orientada a Objetos (POO).
-Seu objetivo é **reutilizar código** e **organizar melhor a estrutura** das classes.
+► OBJETIVO DA HERANÇA
 
----
+A herança em Java serve para criar uma estrutura base (classe pai) e permitir
+que outras classes (subclasses ou classes filhas) reutilizem os atributos e métodos
+já definidos. 
 
-👨‍👧 Relação entre Classe Pai e Subclasse
+Isso traz dois grandes benefícios:
+1. Reutilização de código — evita repetir código igual em várias classes.
+2. Organização — deixa o código mais limpo e fácil de manter.
 
-- A **classe pai (ou superclasse)** define atributos e comportamentos comuns.
-- A **subclasse (ou classe filha)** herda esses atributos e métodos, podendo usá-los ou modificá-los.
-- Isso evita repetição de código e facilita a manutenção do programa.
+A classe pai (superclasse) costuma armazenar os atributos e métodos que
+serão compartilhados pelas subclasses.  
+Assim, a subclasse herda essas características e pode:
+- Reutilizar os métodos e atributos da classe pai.
+- Criar seus próprios métodos específicos.
+- Sobrescrever (modificar) métodos herdados, se precisar alterar o comportamento.
+
+---------------------------------------
+
+► EXEMPLO SIMPLES:
+
+Classe Pai: Animal  
+Classe Filha: Gato
+
+O Gato herda os atributos e métodos da classe Animal,
+como o atributo “nome” e o método “emitirSom()”.
+
+---------------------------------------
+
+► CONSTRUTOR E O USO DO SUPER()
+
+Quando uma subclasse é criada, ela pode chamar o construtor da classe pai
+para aproveitar sua inicialização.
+
+Exemplo:
+
+    public Gato(String nome) {
+        super(nome);
+    }
+
+O comando “super(nome)” chama o construtor da classe pai (Animal),
+passando o valor “nome” como argumento.  
+Isso faz com que o atributo “nome” seja armazenado dentro da classe Animal,
+mas como a subclasse herda esse atributo, ela também pode utilizá-lo normalmente.
+
+Ou seja:
+- O atributo fica na classe pai.
+- A subclasse herda e tem acesso a ele.
+
+---------------------------------------
+
+► ANOTAÇÃO @Override
+
+A anotação @Override serve para indicar que um método da subclasse está
+sobrescrevendo (reescrevendo) um método já existente na classe pai.
+
+Exemplo:
+
+    @Override
+    public void emitirSom() {
+        System.out.println(nome + " está fazendo: miau!");
+    }
+
+Ela é muito importante porque:
+- Garante que o nome e os parâmetros do método sejam exatamente os mesmos da superclasse.
+- Se houver erro de digitação (como “emitiSom”), o compilador mostrará erro.
+- Isso evita confusões e garante que a sobrescrita é intencional e correta.
+
+---------------------------------------
+
+► USO DO super DENTRO DE MÉTODOS
+
+Além do construtor, podemos usar “super” dentro de métodos para chamar
+versões da classe pai.
+
+Exemplo:
+
+    public void EmitirSomAnimal() {
+        super.emitirSom();  // Chama o método da classe pai
+    }
+
+Isso é útil quando queremos aproveitar o comportamento da classe pai,
+mas também adicionar algo novo na subclasse.
+
+---------------------------------------
+
+► RESUMO
+
+- “extends” → indica que uma classe herda de outra.
+- “super()” → chama o construtor da classe pai.
+- “super.metodo()” → chama um método específico da classe pai.
+- “@Override” → garante que o método foi sobrescrito corretamente.
+- A herança melhora a reutilização e a organização do código.
+
+---------------------------------------
 
 Exemplo prático:
-- Classe Pai: `Animal`
-- Subclasse: `Gato`
-O `Gato` herda as características do `Animal`, como o atributo `nome` e o método `emitirSom()`.
 
----
+    Animal garfield = new Gato("Garfield");
+    garfield.emitirSom();     // Miau!
+    ((Gato)garfield).ronronar();  // Método exclusivo da subclasse
 
-🔹 Construtor com `super()`
+---------------------------------------
 
-O método `super()` é usado dentro da subclasse para **chamar o construtor da classe pai**.
-Isso permite inicializar corretamente os atributos herdados.
-
-Exemplo:
-```java
-public Gato(String nome) {
-    super(nome); // Chama o construtor da classe Animal e passa o nome
-}
-```
-
-O atributo `nome` é armazenado dentro da **classe pai (Animal)**, mas pode ser acessado pela subclasse, pois foi herdado.
-
----
-
-🔹 Sobrescrita com `@Override`
-
-A anotação `@Override` é usada quando a subclasse **redefine um método** que já existe na classe pai.
-Isso indica ao Java que o método original foi **substituído** por uma nova implementação.
-
-Exemplo:
-```java
-@Override
-public void emitirSom() {
-    System.out.println(nome + " está fazendo: miau!");
-}
-```
-
-O uso de `@Override` **evita erros** e **deixa o código mais claro**, pois o Java verifica se realmente existe um método com o mesmo nome na classe pai.
-
----
-
-✅ Em resumo:
-
-- A **classe pai** concentra os atributos e métodos comuns.
-- As **subclasses** herdam esses comportamentos e podem personalizá-los.
-- O `super()` chama o construtor ou métodos da classe pai.
-- O `@Override` sobrescreve métodos herdados, garantindo compatibilidade e clareza.
-
----
-
-🎯 Vantagens da Herança:
-- Reutilização de código
-- Organização do projeto
-- Manutenção facilitada
-- Estrutura hierárquica clara
+Autor: Maiquel
+Estudo: Conceito de Herança em Java

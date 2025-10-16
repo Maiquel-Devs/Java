@@ -15,6 +15,7 @@ public class index {
 
         // Chama o método da superclasse (Animal) usando 'super'
         garfield.EmitirSomAnimal();
+        
     }
 
 }
