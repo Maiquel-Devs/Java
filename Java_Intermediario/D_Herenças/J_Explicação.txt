@@ -1,0 +1,67 @@
+📘 Conceito de Herança em Java
+
+➡️ A **herança** é um dos principais pilares da Programação Orientada a Objetos (POO).
+Seu objetivo é **reutilizar código** e **organizar melhor a estrutura** das classes.
+
+---
+
+👨‍👧 Relação entre Classe Pai e Subclasse
+
+- A **classe pai (ou superclasse)** define atributos e comportamentos comuns.
+- A **subclasse (ou classe filha)** herda esses atributos e métodos, podendo usá-los ou modificá-los.
+- Isso evita repetição de código e facilita a manutenção do programa.
+
+Exemplo prático:
+- Classe Pai: `Animal`
+- Subclasse: `Gato`
+O `Gato` herda as características do `Animal`, como o atributo `nome` e o método `emitirSom()`.
+
+---
+
+🔹 Construtor com `super()`
+
+O método `super()` é usado dentro da subclasse para **chamar o construtor da classe pai**.
+Isso permite inicializar corretamente os atributos herdados.
+
+Exemplo:
+```java
+public Gato(String nome) {
+    super(nome); // Chama o construtor da classe Animal e passa o nome
+}
+```
+
+O atributo `nome` é armazenado dentro da **classe pai (Animal)**, mas pode ser acessado pela subclasse, pois foi herdado.
+
+---
+
+🔹 Sobrescrita com `@Override`
+
+A anotação `@Override` é usada quando a subclasse **redefine um método** que já existe na classe pai.
+Isso indica ao Java que o método original foi **substituído** por uma nova implementação.
+
+Exemplo:
+```java
+@Override
+public void emitirSom() {
+    System.out.println(nome + " está fazendo: miau!");
+}
+```
+
+O uso de `@Override` **evita erros** e **deixa o código mais claro**, pois o Java verifica se realmente existe um método com o mesmo nome na classe pai.
+
+---
+
+✅ Em resumo:
+
+- A **classe pai** concentra os atributos e métodos comuns.
+- As **subclasses** herdam esses comportamentos e podem personalizá-los.
+- O `super()` chama o construtor ou métodos da classe pai.
+- O `@Override` sobrescreve métodos herdados, garantindo compatibilidade e clareza.
+
+---
+
+🎯 Vantagens da Herança:
+- Reutilização de código
+- Organização do projeto
+- Manutenção facilitada
+- Estrutura hierárquica clara
