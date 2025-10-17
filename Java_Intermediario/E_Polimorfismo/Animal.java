@@ -1,15 +1,11 @@
 package Java_Intermediario.E_Polimorfismo;
 
 public class Animal {
+
+
+    public void emitirSom() {   // Método que será herdado nas Subclasses
+        System.out.println("Som genérico de animal");
+    }
     
-    String nome;
-
-    public Animal(String nome) {
-        this.nome = nome;
-    }
-
-    public void emitirSom() {
-        System.out.println(nome + " está fazendo um som genérico.");
-    }
 
 }
