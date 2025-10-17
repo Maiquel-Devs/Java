@@ -7,7 +7,7 @@ public class index {
         Animal a1 = new Gato();
 
         a1.emitirSom();     // ✅ "Miau"
-        a1.arranhar();      // ❌ Erro! Animal não tem método arranhar()
+  //    a1.arranhar();      // ❌ Erro! Animal não tem método arranhar()
 
 
         Gato g = new Gato();
